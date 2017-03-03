@@ -1,0 +1,28 @@
+// your style goes here
+
+// 覆盖字体路径变量，以防止编译出错
+// 1.0.0-rc.1 有点小问题，需要手动删掉
+//    node_modules/amazeui-touch/scss/amazeui.touch.scss 中的 `$ratchicons-path: 'fonts/';` 这一行
+// @see https://github.com/jtangelder/sass-loader#problems-with-url
+$ratchicons-path: "../../node_modules/amazeui-touch/fonts/";
+
+@import "~amazeui-touch/scss/amazeui.touch.scss";
+
+/* Container `fade` 动画示例 */
+.view-transition-fade-enter {
+  opacity: 0.01;
+}
+
+.view-transition-fade-enter.view-transition-fade-enter-active {
+  opacity: 1;
+  transition: opacity 450ms ease-in;
+}
+
+.view-transition-fade-leave {
+  opacity: 1;
+}
+
+.view-transition-fade-leave.view-transition-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
